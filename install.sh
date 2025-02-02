@@ -7,12 +7,10 @@ if [ "$(uname)" != "Darwin" ]; then
 fi
 
 # Determine the installation directory.
-# Prefer /usr/local/bin if writable, otherwise fallback to ~/bin.
-TARGET_DIR="/usr/local/bin"
+TARGET_DIR="$HOME/.local/bin"
 if [ ! -w "$TARGET_DIR" ]; then
-  TARGET_DIR="$HOME/bin"
-  mkdir -p "$TARGET_DIR"
-  echo "Using $TARGET_DIR as installation directory (since /usr/local/bin is not writable)."
+  echo "No write permissions on $HOME directory"
+  exit 1
 fi
 
 SNIP_URL="https://raw.githubusercontent.com/hassiebp/snip/master/bin/snip.sh"

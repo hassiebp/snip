@@ -36,7 +36,7 @@ This script will:
 
 - Check that you are on macOS.
 - Download the snip.sh script from the repository.
-- Install it to /usr/local/bin (or ~/bin if you don’t have permission to write to /usr/local/bin).
+- Install it to $HOME/.local/bin
 - Make it executable.
 
 Make sure the install directory is in your PATH so you can run snip from anywhere.
